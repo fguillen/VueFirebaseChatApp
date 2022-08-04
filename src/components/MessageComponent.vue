@@ -3,7 +3,10 @@
     <span v-if="!sender">{{ name }}</span>
     <div class="flex" :class="sender ? 'flex-row-reverse' : ''">
       <AvatarComponent class="mt-1" :src="photoUrl" />
-      <div class="text w-3/4" :class="sender ? 'bg-green-800' : 'bg-gray-700'">
+      <div v-if="isMimi" class="text text-4xl w-3/4 bg-red-400 font-black">
+        <slot />
+      </div>
+      <div v-else class="text w-3/4" :class="sender ? 'bg-green-800' : 'bg-gray-700'">
         <slot />
       </div>
 
@@ -17,6 +20,7 @@
 
 <script>
 import AvatarComponent from "./AvatarComponent.vue"
+import { computed } from "vue"
 
 export default {
   components: { AvatarComponent },
@@ -24,6 +28,12 @@ export default {
     name: { type: String, default: "" },
     photoUrl: { type: String, default: "" },
     sender: { type: Boolean, default: false }
+  },
+  setup(_props, context) {
+    console.log("context:", context.slots.default())
+    const isMimi = computed(() => context.slots.default()[0].children.trim().match(/^[\smi]+$/))
+
+    return { isMimi }
   }
 }
 </script>
