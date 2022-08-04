@@ -11,7 +11,7 @@
       </div>
 
       <button @click="$emit('delete')" v-if="sender" type="button"
-        class="h-9 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        class="h-9 text-white bg-gray-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
         <font-awesome-icon :icon="['fa', 'fa-circle-xmark']" />
       </button>
     </div>
