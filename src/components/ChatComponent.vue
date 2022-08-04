@@ -2,8 +2,13 @@
   <div class="container-sm mt-20">
     <div class="mx-5">
       <div class="mx-5">
-        <MessageComponent v-for="message in messages" :key="message.id" :name="message.userName"
-          :photo-url="message.userPhotoURL" :sender="message.userId === user?.uid">
+        <MessageComponent v-for="message in messages"
+          :key="message.id"
+          :name="message.userName"
+          :photo-url="message.userPhotoURL"
+          :sender="message.userId === user?.uid"
+          @delete="deleteMessage(message)"
+        >
           {{ message.text }}
         </MessageComponent>
       </div>
