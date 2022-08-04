@@ -2,15 +2,15 @@
   <nav>
     <div>
       <h1><strong>Vue</strong> Chat App</h1>
-      <button v-if="isLogin" @click="signOut">
-        Sign out xx
 
-        <pre>
-          {{ user }}
-        </pre>
-      </button>
+      <div v-if="isLogin" class="login">
+        <AvatarComponent :src="user.photoURL" />
+        <button class="text-gray-400 hover:text-white" @click="signOut">
+          Sign Out
+        </button>
+      </div>
 
-      <button v-else @click="signIn">
+      <button v-else class="bg-green-500 hover:bg-green-600" @click="signIn">
         Sign in
       </button>
     </div>
@@ -18,9 +18,11 @@
 </template>
 
 <script>
-import { useAuth } from "@/firebase"
+import AvatarComponent from './AvatarComponent.vue'
+import { useAuth } from '@/firebase'
 
 export default {
+  components: { AvatarComponent },
   setup() {
     const { user, isLogin, signOut, signIn } = useAuth()
     return { user, isLogin, signOut, signIn }
