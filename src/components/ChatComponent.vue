@@ -10,6 +10,8 @@
     </div>
   </div>
 
+  <div ref="bottom" class="mt-20" />
+
   <div class="bottom">
     <div class="container-sm">
       <form v-if="isLogin" @submit.prevent="send">
