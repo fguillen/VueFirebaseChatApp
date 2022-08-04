@@ -71,5 +71,11 @@ export function useChat() {
     })
   }
 
-  return { messages, sendMessage }
+  const deleteMessage = (id) => {
+    console.log("deleteMessage: " + id)
+    if (!isLogin.value) return
+    messagesCollection.doc(id).delete()
+  }
+
+  return { messages, sendMessage, deleteMessage }
 }

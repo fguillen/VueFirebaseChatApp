@@ -7,7 +7,7 @@
           :name="message.userName"
           :photo-url="message.userPhotoURL"
           :sender="message.userId === user?.uid"
-          @delete="deleteMessage(message)"
+          @delete="del(message)"
         >
           {{ message.text }}
         </MessageComponent>
@@ -38,7 +38,7 @@ import { ref, watch, nextTick } from "vue"
 export default {
   components: { MessageComponent, SendIconComponent },
   setup() {
-    const { messages, sendMessage } = useChat()
+    const { messages, sendMessage, deleteMessage } = useChat()
     const { user, isLogin } = useAuth()
 
     const bottom = ref(null)
@@ -60,7 +60,11 @@ export default {
       message.value = ""
     }
 
-    return { isLogin, user, messages, send, message, bottom }
+    const del = (message) => {
+      deleteMessage(message.id)
+    }
+
+    return { isLogin, user, messages, send, del, message, bottom }
   }
 }
 
