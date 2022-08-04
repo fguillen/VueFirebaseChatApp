@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div>
-      <h1><strong>Vue</strong> Chat App</h1>
+      <h1><strong class="text-red-400">Lovely</strong> Chat App</h1>
 
       <div v-if="isLogin" class="login">
         <AvatarComponent :src="user.photoURL" />

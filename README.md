@@ -22,3 +22,7 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Assets
+
+<a target="_blank" href="https://icons8.com/icon/hYHS0mS5vZqt/hearts">Hearts</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
