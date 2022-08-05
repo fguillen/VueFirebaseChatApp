@@ -45,9 +45,7 @@ export default {
     watch(
       messages,
       () => {
-        console.log("watch.messages")
         nextTick(() => {
-          console.log("watch.messages.nextTick")
           bottom.value?.scrollIntoView({ behavior: "smooth" })
         })
       },
