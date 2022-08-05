@@ -30,7 +30,6 @@ export default {
     sender: { type: Boolean, default: false }
   },
   setup(_props, context) {
-    console.log("context:", context.slots.default())
     const isMimi = computed(() => context.slots.default()[0].children.trim().match(/^[\smi]+$/))
 
     return { isMimi }
