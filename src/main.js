@@ -1,4 +1,4 @@
-console.log("LovelyChatApp v0.0.1")
+console.log("LovelyChatApp v0.0.2")
 
 import { createApp } from 'vue'
 import App from './App.vue'
