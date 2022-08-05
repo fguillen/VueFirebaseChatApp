@@ -9,11 +9,11 @@ export default {
     let isFocus = false
 
     const setUnreadIcon = () => {
-      favicon.href = "/favicon.png";
+      favicon.href = favicon.href.replace(/favicon.*\.png/, "favicon.png");
     }
 
     const setReadIcon = () => {
-      favicon.href = "/favicon_read.png";
+      favicon.href = favicon.href.replace(/favicon.*\.png/, "favicon_read.png");
     }
 
     const setFocus = () => {
