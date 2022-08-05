@@ -15,6 +15,6 @@ export default {
     ChatComponent,
     NavComponent,
     FaviconComponent
-}
+  }
 }
 </script>

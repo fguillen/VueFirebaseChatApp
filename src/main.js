@@ -1,3 +1,5 @@
+console.log("LovelyChatApp v0.0.1")
+
 import { createApp } from 'vue'
 import App from './App.vue'
 
